@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "FaultSignalGeneratorCustomSymbols")(type "KiCad")(uri "${KIPRJMOD}/FaultSignalGeneratorCustomSymbols.kicad_sym")(options "")(descr ""))
+)
