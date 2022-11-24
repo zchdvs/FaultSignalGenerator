@@ -75,7 +75,7 @@ function AdminNavbar(props) {
   };
   return (
     <>
-      <Navbar className={classNames("navbar-absolute", color)} expand="lg">
+      <Navbar className={classNames(color)} expand="lg">
         <Container fluid>
           <div className="navbar-wrapper">
             <div

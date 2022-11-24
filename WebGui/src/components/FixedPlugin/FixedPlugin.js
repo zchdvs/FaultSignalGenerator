@@ -28,7 +28,7 @@ function FixedPlugin(props) {
     setdropDownIsOpen(!dropDownIsOpen);
   };
   return (
-    <div className="fixed-plugin mt-1 ml-auto">
+    <div className="fixed-plugin mt-1 ml-auto float-right">
       <Dropdown isOpen={dropDownIsOpen} toggle={handleClick}>
         <DropdownToggle tag="div">
           <i className="fa fa-cog fa-2x" />

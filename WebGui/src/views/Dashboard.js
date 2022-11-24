@@ -49,14 +49,15 @@ import {
   chartExample3,
   chartExample4
 } from "variables/charts.js";
-
+import ScrollBar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 function Dashboard(props) {
   const [bigChartData, setbigChartData] = React.useState("data1");
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
   return (
-    <>
+      <ScrollBar>
       <div className="content">
         <Row>
           <Col xs="12">
@@ -528,7 +529,8 @@ function Dashboard(props) {
           </Col>
         </Row>
       </div>
-    </>
+      </ScrollBar>
+
   );
 }
 

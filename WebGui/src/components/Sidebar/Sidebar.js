@@ -98,7 +98,7 @@ function Sidebar(props) {
       );
       logoText = (
         <div
-          // to={logo.innerLink}
+          to={logo.innerLink}
           className="simple-text logo-normal text-center"
           onClick={props.toggleSidebar}
         >

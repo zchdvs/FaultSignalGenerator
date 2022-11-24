@@ -16,9 +16,14 @@
 
 */
 import React from "react";
-import { Route, Switch, Redirect, useLocation } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  Redirect,
+  useLocation,
+  browserHistory,
+} from "react-router-dom";
 // javascript plugin used to create scrollbars on windows
-import PerfectScrollbar from "perfect-scrollbar";
 
 // core components
 import AdminNavbar from "components/Navbars/AdminNavbar.js";
@@ -30,7 +35,8 @@ import routes from "routes.js";
 
 import logo from "assets/img/SEL-Logo.png";
 import { BackgroundColorContext } from "contexts/BackgroundColorContext";
-
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
 var ps;
 
 function Admin(props) {
@@ -39,40 +45,41 @@ function Admin(props) {
   const [sidebarOpened, setsidebarOpened] = React.useState(
     document.documentElement.className.indexOf("nav-open") !== -1
   );
-  React.useEffect(() => {
-    if (navigator.platform.indexOf("Win") > -1) {
-      document.documentElement.className += " perfect-scrollbar-on";
-      document.documentElement.classList.remove("perfect-scrollbar-off");
-      ps = new PerfectScrollbar(mainPanelRef.current, {
-        suppressScrollX: true
-      });
-      let tables = document.querySelectorAll(".table-responsive");
-      for (let i = 0; i < tables.length; i++) {
-        ps = new PerfectScrollbar(tables[i]);
-      }
-    }
-    // Specify how to clean up after this effect:
-    return function cleanup() {
-      if (navigator.platform.indexOf("Win") > -1) {
-        ps.destroy();
-        document.documentElement.classList.add("perfect-scrollbar-off");
-        document.documentElement.classList.remove("perfect-scrollbar-on");
-      }
-    };
-  });
-  React.useEffect(() => {
-    if (navigator.platform.indexOf("Win") > -1) {
-      let tables = document.querySelectorAll(".table-responsive");
-      for (let i = 0; i < tables.length; i++) {
-        ps = new PerfectScrollbar(tables[i]);
-      }
-    }
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    if (mainPanelRef.current) {
-      mainPanelRef.current.scrollTop = 0;
-    }
-  }, [location]);
+  // React.useEffect(() => {
+  //   if (navigator.platform.indexOf("Win") > -1) {
+  //     document.documentElement.className += " perfect-scrollbar-on";
+  //     document.documentElement.classList.remove("perfect-scrollbar-off");
+  //     ps = new PerfectScrollbar(mainPanelRef.current, {
+  //       suppressScrollX: true
+  //     });
+  //     let tables = document.querySelectorAll(".table-responsive");
+  //     for (let i = 0; i < tables.length; i++) {
+  //       ps = new PerfectScrollbar(tables[i]);
+  //     }
+  //   }
+  //   // Specify how to clean up after this effect:
+  //   return function cleanup() {
+  //     if (navigator.platform.indexOf("Win") > -1) {
+  //       ps.destroy();
+  //       document.documentElement.classList.add("perfect-scrollbar-off");
+  //       document.documentElement.classList.remove("perfect-scrollbar-on");
+  //     }
+  //   };
+  // });
+  // React.useEffect(() => {
+  //   if (navigator.platform.indexOf("Win") > -1) {
+  //     let tables = document.querySelectorAll(".table-responsive");
+  //     for (let i = 0; i < tables.length; i++) {
+  //       ps = new PerfectScrollbar(tables[i]);
+  //     }
+  //   }
+  //   document.documentElement.scrollTop = 0;
+  //   document.scrollingElement.scrollTop = 0;
+  //   if (mainPanelRef.current) {
+  //     mainPanelRef.current.scrollTop = 0;
+  //   }
+  //   ps.update()
+  // }, [location]);
   // this function opens and closes the sidebar on small devices
   const toggleSidebar = () => {
     document.documentElement.classList.toggle("nav-open");
@@ -106,30 +113,52 @@ function Admin(props) {
       {({ color, changeColor }) => (
         <React.Fragment>
           <div className="wrapper">
-            <Sidebar
-              routes={routes}
-              logo={{
-                
-                text: "Fault Signal Generator"
-                // imgSrc: logo
-              }}
-              toggleSidebar={toggleSidebar}
-            />
-            <div className="main-panel" ref={mainPanelRef} data={color}>
-              <AdminNavbar
-                brandText={getBrandText(location.pathname)}
-                toggleSidebar={toggleSidebar}
-                sidebarOpened={sidebarOpened}
-              />
-              <Switch>
-                {getRoutes(routes)}
-                <Redirect from="*" to="/admin/dashboard" />
-              </Switch>
-              {
-                // we don't want the Footer to be rendered on map page
-                location.pathname === "/admin/maps" ? null : <Footer fluid />
-              }
+            <div
+              className="main-panel container-fluid"
+              ref={mainPanelRef}
+              data={color}
+            >
+              <div className="row">
+                <div className="col-12">
+                  <AdminNavbar
+                    brandText={getBrandText(location.pathname)}
+                    toggleSidebar={toggleSidebar}
+                    sidebarOpened={sidebarOpened}
+                  />
+                </div>
+              </div>
+              <div className="row mb-3">
+                <div className="col-auto">
+                  <Sidebar
+                    routes={routes}
+                    logo={{
+                      text: "Fault Signal Generator",
+                      // imgSrc: logo
+                    }}
+                    toggleSidebar={toggleSidebar}
+                  />
+                </div>
+                <div className="col flex-column mb-3">
+                  <div className="row-fluid">
+                    <Switch>
+                      {getRoutes(routes)}
+                      <Redirect from="*" to="/admin/dashboard" />
+
+                    </Switch>
+                  </div>
+
+
+                </div>
+                {
+                          // we don't want the Footer to be rendered on map page
+                          location.pathname === "/admin/maps" ? null : (
+                            <Footer fluid />
+                          )
+                        }
+              </div>
+
             </div>
+
           </div>
         </React.Fragment>
       )}

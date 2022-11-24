@@ -16,12 +16,15 @@
   margin-left: 25px;
 
 }
+.content{
+  max-height: 87vh;
+}
 .sidebar,
 .off-canvas-sidebar{
   @include linear-gradient($primary-states, $primary);
   height: calc(100vh - 90px);
   width: 230px;
-  position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
   z-index: 1;
@@ -29,7 +32,7 @@
   background-position: center center;
   display: block;
   box-shadow: 0px 0px 45px 0px rgba(0,0,0,0.6);
-  margin-top: 80px;
+  //margin-top: 80px;
   margin-left: 20px;
   border-radius: 5px;
 
