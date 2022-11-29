@@ -32,7 +32,7 @@ import {
   Col
 } from "reactstrap";
 
-function Notifications() {
+function Documentation() {
   const notificationAlertRef = React.useRef(null);
   const notify = (place) => {
     var color = Math.floor(Math.random() * 5 + 1);
@@ -237,4 +237,4 @@ function Notifications() {
   );
 }
 
-export default Notifications;
+export default Documentation;

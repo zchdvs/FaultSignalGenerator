@@ -20,7 +20,7 @@ import React from "react";
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
-function Icons() {
+function SignalCreation() {
   return (
     <>
       <div className="content">
@@ -1146,4 +1146,4 @@ function Icons() {
   );
 }
 
-export default Icons;
+export default SignalCreation;

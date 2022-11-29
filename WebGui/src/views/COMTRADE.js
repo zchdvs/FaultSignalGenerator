@@ -51,13 +51,13 @@ import {
 } from "variables/charts.js";
 import ScrollBar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-function Dashboard(props) {
+function COMTRADE(props) {
   const [bigChartData, setbigChartData] = React.useState("data1");
   const setBgChartData = (name) => {
     setbigChartData(name);
   };
   return (
-      <ScrollBar>
+      <ScrollBar  options={{suppressScrollX:true, useBothWheelAxes:false}}>
       <div className="content">
         <Row>
           <Col xs="12">
@@ -534,4 +534,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard;
+export default COMTRADE;
