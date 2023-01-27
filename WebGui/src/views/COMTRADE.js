@@ -52,23 +52,36 @@ import {
 import ScrollBar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import StyledDropzone from "components/StyledDropzone/StyledDropzone";
-function COMTRADE(props) {
-  const [data, setData] = React.useState(
-    <div className="container-fluid">
-      <Card className="card-chart">
-      <CardHeader>
-        <CardTitle tag="h3">
-          <i className="fa-solid fa-file-waveform text-info" /> Upload COMTRADE File
-        </CardTitle>
-      </CardHeader>
-      <CardBody>
-        
-        <StyledDropzone></StyledDropzone>
-      </CardBody>
-    </Card>
-  </div>
-  );
 
+function COMTRADE(props) {
+
+const [data, setData] = React.useState(
+<div className="container-fluid">
+  <Card className="card-chart">
+  <CardHeader>
+    <CardTitle tag="h3">
+      <i className="fa-solid fa-file-waveform text-info" /> Upload COMTRADE File
+    </CardTitle>
+  </CardHeader>
+  <CardBody>
+    
+    <StyledDropzone onDropAccepted={onDrop()}></StyledDropzone>
+  </CardBody>
+</Card>
+</div>);
+  function onDrop() {
+    fetch('http:/localhost/signal/info', {
+      method: 'POST',
+      body: {
+        'reductionFactor': 100
+      }
+    })
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+    setData(
+        data
+    )
+  }
 
   return (
       <ScrollBar  options={{suppressScrollX:true, useBothWheelAxes:false}}>

@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from comtrade import Comtrade
+from Comtrade import Comtrade
 
 rec = Comtrade()
 rec.load("sample-comtrade/example 11.cfg", "sample-comtrade/example 11.dat")
