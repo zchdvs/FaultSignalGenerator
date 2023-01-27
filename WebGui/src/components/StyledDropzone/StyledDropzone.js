@@ -1,5 +1,6 @@
 import React, {useMemo} from 'react';
 import {useDropzone} from 'react-dropzone';
+import {getComtrade} from '../../greeter_client.js'
 
 const baseStyle = {
   flex: 1,
@@ -29,6 +30,10 @@ const rejectStyle = {
 };
 
 function StyledDropzone(props) {
+  var comtrade;
+  const onDrop = useCallback(acceptedFile => {
+    comtrade = getComtrade(acceptFile.path)
+  }, [])
   const {
     getRootProps,
     getInputProps,
