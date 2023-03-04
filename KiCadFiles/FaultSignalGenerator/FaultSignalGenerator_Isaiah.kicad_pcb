@@ -76,4 +76,20 @@
 
   (net 0 "")
 
+  (zone (net 0) (net_name "") (layer "F.Cu") (tstamp 5089acb1-0fc9-487f-8026-fcd0c050ad69) (name "FSG Rules") (hatch edge 0.508)
+    (connect_pads (clearance 0))
+    (min_thickness 0.254)
+    (keepout (tracks not_allowed) (vias not_allowed) (pads not_allowed) (copperpour allowed) (footprints allowed))
+    (fill (thermal_gap 0.508) (thermal_bridge_width 0.508))
+    (polygon
+      (pts
+        (xy 284.48 165.1)
+        (xy 177.8 165.1)
+        (xy 177.8 195.58)
+        (xy 12.7 198.12)
+        (xy 12.7 12.7)
+        (xy 284.48 12.7)
+      )
+    )
+  )
 )
