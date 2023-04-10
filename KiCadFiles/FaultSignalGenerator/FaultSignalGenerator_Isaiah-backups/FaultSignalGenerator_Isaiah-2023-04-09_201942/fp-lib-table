@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name "TL074CDR_OpAmp")(type "KiCad")(uri "C:/Users/ike01/Downloads/ul_TL074CDR/KiCAD/2023-03-03_20-17-00/footprints.pretty")(options "")(descr "OpAmp used for Capstone Project"))
+  (lib (name "PCM1681PWP")(type "KiCad")(uri "C:/Users/ike01/Downloads/ul_PCM1681PWP/KiCAD/2023-03-03_20-38-38/footprints.pretty")(options "")(descr "DAC used for Capstone Project"))
+  (lib (name "DPOT")(type "KiCad")(uri "C:/Users/ike01/Downloads/ul_MCP4462-502E-ST/KiCAD/2023-03-03_20-37-49/footprints.pretty")(options "")(descr ""))
+)
