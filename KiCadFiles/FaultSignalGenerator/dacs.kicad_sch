@@ -364,7 +364,6 @@
     )
   )
 
-
   (junction (at 209.55 119.38) (diameter 0) (color 0 0 0 0)
     (uuid 0dcf75ef-0df7-4d53-a1ad-c6f93d7453d3)
   )
@@ -2025,7 +2024,7 @@
     (property "Value" "10uF" (at 212.09 118.1989 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4" (at 209.55 116.84 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 209.55 116.84 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 209.55 116.84 0)
@@ -2205,7 +2204,7 @@
     (property "Value" "10uF" (at 209.55 52.1589 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitor_SMD:CP_Elec_4x5.4" (at 207.01 50.8 0)
+    (property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder" (at 207.01 50.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 207.01 50.8 0)
