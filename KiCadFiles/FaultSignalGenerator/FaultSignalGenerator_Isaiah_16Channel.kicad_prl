@@ -1,7 +1,7 @@
 {
   "board": {
     "active_layer": 0,
-    "active_layer_preset": "Back Layers",
+    "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [
@@ -39,6 +39,7 @@
       8,
       9,
       10,
+      11,
       12,
       13,
       15,
@@ -65,7 +66,7 @@
       39,
       40
     ],
-    "visible_layers": "0015055_80000000",
+    "visible_layers": "0001000_7fffffff",
     "zone_display_mode": 0
   },
   "meta": {
