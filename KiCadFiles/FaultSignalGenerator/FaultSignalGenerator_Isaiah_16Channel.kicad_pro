@@ -478,6 +478,39 @@
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "3a214bbd-f165-4e5a-97f6-6681b54fad45",
+      ""
+    ],
+    [
+      "b6838099-fd05-4545-b95d-8164ff18127f",
+      "DPOT"
+    ],
+    [
+      "28bbe544-43e3-41dc-bdc6-7e01e42f50a4",
+      "Filtering"
+    ],
+    [
+      "7ef0429d-8aff-41e5-b7bf-164e547c100e",
+      "Op-amps"
+    ],
+    [
+      "bd08dd11-1fda-417c-af0d-39793fadd1e1",
+      "DAC Sheet"
+    ],
+    [
+      "ad5f6704-22f2-47b8-9a9d-5ed5a37dc76e",
+      "Additional Filters"
+    ],
+    [
+      "732d85c1-5ad8-4a25-8787-693618210d71",
+      "Power"
+    ],
+    [
+      "30014d26-4501-4aab-a2f3-59d7ac32acd9",
+      "Amplification Stage"
+    ]
+  ],
   "text_variables": {}
 }
